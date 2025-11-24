@@ -1,0 +1,13 @@
+# my global config
+global:
+  scrape_interval: 15s 
+  evaluation_interval: 15s 
+
+# A list of configurations defining what targets Prometheus should scrape.
+scrape_configs:
+  - job_name: 'api_monitoring'
+    # Use the internal Docker service name (churn_prediction_api) and the exposed metrics port (8001).
+    static_configs:
+      - targets: ['churn_prediction_api:8001']
+    # CRITICAL ADDITION: Explicitly set the metrics path
+    metrics_path: /metrics

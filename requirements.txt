@@ -1,0 +1,9 @@
+fastapi
+uvicorn[standard]
+pandas
+scikit-learn
+joblib
+numpy
+pydantic
+prometheus-client
+python-dotenv
